@@ -1,3 +1,17 @@
+In many financial situations like default prediction, interpretable model are required. Linear models like 
+logistic model are often used to reach the requirement. Meanwhile, in order to make the model robust, people
+often apply single variable transformation like WOE. However, such transformation has two main drawbacks:
+
+    1) It is sensitive to noise and sometimes yields transformed boxed which are not monotone.
+    2) Because of the loss of monotonicity, interpretibility can not be guaranteed.
+    
+This repository introduce a new method of single variable transformation, which can ensure that the transformation
+is monotone as well as continues.
+
+Further more, the repository also present LinearModel.py which offers a series of modified logistic model. The dome
+jupyter file shows that the modified methods outperforms the state of art logistic model in terms of accuracy and 
+robustness.
+
 *MonoLogitTrans.py* : 
 
     模块说明：

@@ -219,6 +219,10 @@ load_parameter: load the parameters from a pickle file
         with open(path,'rb') as f:
             self.weights,self.biases,self.x_mean,self.x_std,self.relation,self.x_mean_data,self.x_std_data,self.x_max_data,self.x_min_data = pickle.load(f,encoding='latinl')
 
+    def plot(self):
+        x_origin_mini = (np.array(range(2000))/2000)*(self.x_max_data-self.x_min_data)+self.x_min_data
+        x_trans_mini = self.transform(x_origin_mini)
+        plt.plot(x_origin_mini,x_trans_mini,'o-')
 
 def transX(dataX_,w1,w2,w3,b1,b2,b3):
     x = np.reshape(dataX_,(dataX_.shape[0],1))
