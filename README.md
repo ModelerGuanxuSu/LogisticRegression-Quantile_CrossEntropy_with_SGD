@@ -1,8 +1,8 @@
-In many financial situations like default prediction, interpretable model are required. Linear models like 
+In many financial situations like default prediction, interpretable models are required. Linear models like 
 logistic model are often used to reach the requirement. Meanwhile, in order to make the model robust, people
 often apply single variable transformation like WOE. However, such transformation has two main drawbacks:
 
-    1) It is sensitive to noise and sometimes yields transformed boxed which are not monotone.
+    1) It is sensitive to noise and sometimes yields transformed boxes which are not monotone.
     2) Because of the loss of monotonicity, interpretibility can not be guaranteed.
     
 This repository introduce a new method of single variable transformation, which can ensure that the transformation
@@ -16,9 +16,9 @@ and robustness.
 
     Description:
         The module offers an algorithm of single varaible transformation, which has following propertities:
-            1) positive corelated with P(Y=1)
+            1) positively corelated with P(Y=1)
             2) offers paramater to choose if the transformation is guaranteed to be monotone
-            3) therotically equivakent to the logit of P(Y=1) 
+            3) theoretically equivalent to the logit of P(Y=1) 
         
         How:
             If the parameter method='wide':
@@ -42,7 +42,7 @@ and robustness.
 
     Description:
         The module offers a siries of class of logistic regression, which are similar to the logistic regressions offered
-        by sklearn when people use them. For example, they have method like fit(), predict(), predict_proba(), etc.
+        by sklearn when people use them. For example, they have methods like fit(), predict(), predict_proba(), etc.
         The main modifications are:
             1）In order to cooperate with single variable transformations like WOE which are positively correlated with
                P(Y=1), the class PosLassoClassifier and PosLassoClassifierCV offers logistic regression with constraint 
@@ -51,8 +51,9 @@ and robustness.
             3) To deal with outliers, the loss of each batch can exclude the largest (1-Q0)*100% elements with label
                Y=0 and (1-Q1)*100% elements with label Y=1, before taking the mean, which makes the model nonsensitive
                of cost.
-            4) The final estimator is the mean of estimated values of 100 iterations after converge, in order to get a
-               robust estimation and variable selection, which makes the model nonsensitive to randomness of sampling.
+            4) The final estimator can be set to be the mean of estimated values of 100 iterations after converge, 
+               in order to get a robust estimation and variable selection, which makes the model nonsensitive to 
+               randomness of sampling.
     Version info：
         sklearn 0.20.1
         tensorflow 1.13.1
