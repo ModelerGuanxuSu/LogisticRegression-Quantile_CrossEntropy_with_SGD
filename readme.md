@@ -383,7 +383,7 @@ model2 = LinearModel.LassoClassifierCV(beta_mean=True,start_point=None)
 model2.fit(X_origin,y_test)
 y_hat_1 = model1.predict_proba(X_origin)
 y_hat_2 = model2.predict_proba(X_origin)
-    
+```
 
 #### Ridge estimator as the start point
 
@@ -441,7 +441,7 @@ model2 = LinearModel.LassoClassifierCV(beta_mean=True,Q0=1,Q1=1)
 model2.fit(X_origin,y_test)
 y_hat_1 = model1.predict_proba(X_origin)
 y_hat_2 = model2.predict_proba(X_origin)
-
+```
 
 #### Q0 and Q1 less than 1
 
