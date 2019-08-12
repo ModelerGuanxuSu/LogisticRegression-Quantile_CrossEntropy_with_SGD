@@ -266,7 +266,7 @@ model1 = LinearModel.PosLassoClassifierCV(beta_mean=True,start_point='OLS')
 model1.fit(X_trans,y_test)
 model2 = LogisticRegressionCV(cv=5)
 model2.fit(X_origin,y_test)
-
+```
 #### Coefficients
 
 
