@@ -26,7 +26,7 @@ and robustness.
                 cross entropy and loss of monotonicity.
                 The difination of loss of monotonicity is:
                     $\text{loss_monotonous}(x,f(x)) = 1 - |(\rho(x,f(x)))|$
-                    $\rho(x,y)$为皮尔森线性相关系数
+                    $\rho(x,y)$ is Pearson correlation coefficient.
                 The final loss function is:
                     loss = cross_entropy($\sigma$(f(x)),y)+lambda_monotonous*loss_monotonous(x,f(x))
             If the parameter method='strict':
