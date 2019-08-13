@@ -10,7 +10,7 @@ This repository introduce a new method of single variable transformation, which 
 is monotone as well as continues.
 
 Further more, the repository also presents LinearModel.py which offers a series of modified logistic models. 
-The dome jupyter file shows that the modified methods outperforms the state of art logistic model in terms of accuracy 
+The [dome jupyter](https://github.com/ModelerGuanxuSu/MonoLogitTrans/blob/master/demo.ipynb) file shows that the modified methods outperforms the state of art logistic model in terms of accuracy 
 and robustness.
 
 [*MonoLogitTrans.py*](https://github.com/ModelerGuanxuSu/MonoLogitTrans/blob/master/MonoLogitTrans.py) : 
