@@ -1,7 +1,7 @@
 
 In many financial situations like default prediction, interpretable models are required. Linear models like 
 logistic model are often used to reach the requirement. Meanwhile, in order to make the model robust, people
-often apply single variable transformation like WOE. However, such transformation has two main drawbacks:
+often apply single variable transformation like [WOE](https://github.com/boredbird/woe). However, such transformation has two main drawbacks:
 
     1) It is sensitive to noise and sometimes yields transformed boxes which are not monotone.
     2) Because of the loss of monotonicity, interpretibility can not be guaranteed.
@@ -13,7 +13,7 @@ Further more, the repository also presents LinearModel.py which offers a series 
 The dome jupyter file shows that the modified methods outperforms the state of art logistic model in terms of accuracy 
 and robustness.
 
-*MonoLogitTrans.py* : 
+[*MonoLogitTrans.py*](https://github.com/ModelerGuanxuSu/MonoLogitTrans/blob/master/MonoLogitTrans.py) : 
 
     Description:
         The module offers an algorithm of single varaible transformation, which has following propertities:
@@ -39,7 +39,7 @@ and robustness.
         tensorflow 1.13.1
         python 3.7.1
         
-*LinearModel.py* : 
+[*LinearModel.py*](https://github.com/ModelerGuanxuSu/MonoLogitTrans/blob/master/LinearModel.py) : 
 
     Description:
         The module offers a siries of class of logistic regression, which are similar to the logistic regressions offered
