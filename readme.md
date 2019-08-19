@@ -10,14 +10,14 @@ often apply single variable transformation like WOE. However, such transformatio
 This repository introduce a new method of single variable transformation, which can ensure that the transformation
 is monotone as well as continues.
 
-Further more, the repository also presents LinearModel.py which offers a series of modified logistic models. 
+The repository also presents LinearModel.py which offers a series of modified logistic models. 
 The dome jupyter file shows that the modified methods outperforms the state of art logistic model in terms of accuracy 
 and robustness.
 
 ## Install
 
-- Download [easylogistic-1.0.1.tar.gz]()
-- 
+- Download [easylogistic-1.0.1.tar.gz](https://github.com/ModelerGuanxuSu/EasyLogistic/raw/master/easylogistic-1.0.1.tar.gz)
+- run `python setup.py install` on commend line
 
 *MonoLogitTrans.py* : 
 
