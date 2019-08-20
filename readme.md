@@ -1,4 +1,12 @@
-## Easy Logistic
+# Easy Logistic
+
+<p align="center">
+    <a href="https://github.com/python/cpython"><img src="https://img.shields.io/badge/Python-3.7-FF1493.svg"></a>
+    <a href="https://opensource.org/licenses/mit-license.php"><img src="https://badges.frapsoft.com/os/mit/mit.svg"></a>
+    <a href="https://github.com/tensorflow/tensorflow"><img src="https://img.shields.io/badge/TensorFlow-1.13.1-blue"></a>
+</p>
+
+
 
 In many financial situations like default prediction, interpretable models are required. Linear models like 
 logistic model are often used to reach the requirement. Meanwhile, in order to make the model robust, people
