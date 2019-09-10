@@ -25,7 +25,7 @@ and robustness.
 
 ## Install
 
-- Download [easylogistic-1.0.1.tar.gz](https://github.com/ModelerGuanxuSu/EasyLogistic/raw/master/easylogistic-1.0.1.tar.gz)
+- Download [easylogistic-1.0.3](https://github.com/ModelerGuanxuSu/EasyLogistic/raw/master/easylogistic-1.0.3)
 - run `python setup.py install` on commend line
 
 
