@@ -41,6 +41,15 @@ Todo:
     2. 增加target属性，用于选择目标变量是连续变量还是二分类变量
     3. 完善transform属性对异常值的处理
 
+-------------------------------------------------------------------------------------------
+-------------------------------------2019-09-10升级说明-------------------------------------
+-------------------------------------------------------------------------------------------
+
+增加功能：
+    1. 增加plot方法，对变量转化函数进行可视化展示
+    2. 增加strict_check属性，纠正由于单调性限制导致的转化值为常数的现象。具体方式
+        为对数据进行切片，逐步去除右端5%数据进行尝试
+
 '''
 
 import tensorflow as tf
@@ -58,8 +67,8 @@ import warnings
 
 class MonoLogitTrans(object):
     '''
-Continuous monotone function of Single variable encoding
-based on logistic regression. The encoded value is the
+Continuous monotone function of Single variable encoding 
+based on logistic regression. The encoded value is the 
 logit of probability of y=1 under monotonous contrains.
 
 Parameters
@@ -102,7 +111,7 @@ weights: list of length 3
     weights in the encoding network
 
 biases: list of length 3
-    biases in the encoding network
+    biases in the encoding network 
 
 Methods
 -------
@@ -183,13 +192,17 @@ load_parameter: load the parameters from a pickle file
         if len(set(dataX)) < 3:
             standardize(self, dataX)
         else:
+            dataX2 = copy.deepcopy(dataX)
+            dataY2 = copy.deepcopy(dataY)
             method_trans(self, dataX, dataY)
-            thresh = 1
-            while (self.x_std <= 1e-1) and self.strict_check and (thresh > 0.7):
-                thresh -= 0.05
-                valid_data = np.array(dataX <= np.quantile(dataX, thresh))
-                dataX = dataX[valid_data]
-                dataY = dataY[valid_data]
+            i = 6
+            while (self.x_std <= 1e-1) and self.strict_check and (i > 0):
+                i -= 1
+                valid_data = np.array(dataX2 <= np.quantile(dataX2, 0.95))
+                dataX2 = dataX2[valid_data]
+                dataY2 = dataY2[valid_data]
+                method_trans(self, dataX2, dataY2)
+            if self.x_std <= 1e-1:
                 method_trans(self, dataX, dataY)
 
 
